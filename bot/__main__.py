@@ -68,11 +68,12 @@ def start(update, context):
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
 This bot can mirror all your links to Google Drive!
+Bot Created By: @SasukeSensei
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         sendMarkup(start_string, context.bot, update, reply_markup)
     else:
-        sendMarkup('Not Authorized user, deploy your own mirror-leech bot', context.bot, update, reply_markup)
+        sendMarkup('User Not Authorized,Contact Bot Owner or Creator (Bot Created By:@SasukeSensei)', context.bot, update, reply_markup)
 
 def restart(update, context):
     restart_message = sendMessage("Restarting...", context.bot, update)
